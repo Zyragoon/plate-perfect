@@ -2,10 +2,125 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plate Perfect</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header {
+            display: flex; align-items: center; padding: 10px;
+            background: #f0f4f7; border-bottom: 1px solid #ccc;
+            position: relative;
+            margin-left: 0;
+        }
+        .search-bar { flex: 1; margin-right: 10px; }
+        .site-title { font-size: 1.5em; margin-right: 20px; }
+        .names { margin-right: 10px; }
+        nav { margin-right: 10px; }
+        .tabs { margin-right: 10px; }
+        main {
+            padding: 20px; transition: margin-left 0.3s;
+        }
+        .sidebar {
+            position: fixed; left: 0; top: 0; bottom: 0;
+            width: 200px; background: #f7fafc; border-right: 1px solid #ddd;
+            padding: 20px; box-sizing: border-box;
+            transition: transform 0.3s;
+            z-index: 1001;
+        }
+        .sidebar.closed {
+            transform: translateX(-220px);
+        }
+        .sidebar-toggle {
+            position: fixed; left: 10px; top: 10px;
+            background: #5c6bc0; color: #fff; border: none; border-radius: 3px;
+            padding: 5px 12px; z-index: 1100; cursor: pointer;
+        }
+        .sidebar.closed + header,
+        .sidebar.closed + main {
+            margin-left: 0;
+        }
+        @media (min-width: 600px) {
+            main {
+                margin-left: 220px;
+            }
+            .sidebar.closed ~ main {
+                margin-left: 0;
+            }
+            header {
+                margin-left: 220px;
+            }
+            .sidebar.closed ~ header {
+                margin-left: 0;
+            }
+        }
+        .subheaders { margin-bottom: 10px; font-weight: 600; }
+        .body-content { margin-bottom: 20px; }
+        footer { padding: 10px 20px; background: #f0f4f7; border-top: 1px solid #ccc; }
+        .links { margin-top: 10px; }
+    </style>
 </head>
 <body>
-    
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
+    <div class="sidebar" id="sidebar">
+        <div class="filters">
+            <p><strong>Filters</strong></p>
+            <label><input type="checkbox"> Price</label><br>
+            <label><input type="checkbox"> Macros</label><br>
+            <label><input type="checkbox"> Location</label>
+        </div>
+        <div>
+            <p><strong>Things or words/descriptions of things on our website</strong></p>
+        </div>
+    </div>
+
+    <header>
+        <div class="names">
+            <!-- Optionally add your names here -->
+        </div>
+        <div class="site-title">Plate Perfect</div>
+        <input class="search-bar" type="text" placeholder="Search...">
+        <nav class="tabs">
+            <!-- Can add tab navigation here -->
+            <span>Tab 1</span>
+            <span>Tab 2</span>
+            <span>Tab 3</span>
+        </nav>
+    </header>
+
+    <main>
+        <div class="subheaders">
+            <span>Name1</span> | <span>Name2</span> | <span>Name3</span>
+        </div>
+        <section>
+            <h2>Descriptions (P5)</h2>
+            <p>This is where the description of meal plans or food items will go.</p>
+        </section>
+        <div class="body-content">
+            <h3>Colors and Images</h3>
+            <div>
+                <ul>
+                    <li>A list of what we have</li>
+                    <li>What we are working on</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <strong>Images (if wanted or needed):</strong>
+            <!-- Add image if needed -->
+        </div>
+        <div class="links">
+            <strong>Links:</strong>
+            <!-- Add relevant links here -->
+        </div>
+    </footer>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('closed');
+        }
+    </script>
 </body>
 </html>
