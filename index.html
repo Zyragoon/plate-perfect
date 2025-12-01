@@ -2,65 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Plate Perfect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plate Perfect - Meal Planning Made Easy</title>
     <link rel="stylesheet" href="styles/styles.css">
     <script src="plate_perfect.js" defer></script>
 </head>
 <body>
-    <button class="sidebar_toggle">☰ Menu</button>
+    <button class="sidebar_toggle" aria-label="Toggle menu">☰ Menu</button>
     <div class="sidebar" id="sidebar">
-        <div class="filters">
-            <p><strong>Filters</strong></p>
-            <label><input type="checkbox"> Price</label><br>
-            <label><input type="checkbox"> Macros</label><br>
-            <label><input type="checkbox"> Location</label>
-        </div>
-        <div>
-            <p><strong>Things or words/descriptions of things on our website</strong></p>
-        </div>
+        <nav class="sidebar-nav">
+            <h3>Filters</h3>
+            <div class="filter-group">
+                <label class="checkbox-label">
+                    <input type="checkbox"> Price Range
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox"> Nutritional Info
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox"> Location
+                </label>
+            </div>
+        </nav>
     </div>
 
     <header>
-        <div class="names">
-            <!-- Optionally add your names here -->
+        <div class="header-content">
+            <div class="logo-section">
+                <h1 class="site-title">🍽️ Plate Perfect</h1>
+            </div>
+            <div class="header-controls">
+                <input class="search-bar" type="text" placeholder="Search meals, recipes...">
+                <nav class="tabs">
+                    <a href="#" class="tab-link">Home</a>
+                    <a href="#" class="tab-link">Meals</a>
+                    <a href="#" class="tab-link">Plans</a>
+                </nav>
+            </div>
         </div>
-        <div class="site-title">Plate Perfect</div>
-        <input class="search-bar" type="text" placeholder="Search...">
-        <nav class="tabs">
-            <!-- Can add tab navigation here -->
-            <span>Tab 1</span>
-            <span>Tab 2</span>
-            <span>Tab 3</span>
-        </nav>
     </header>
 
     <main>
-        <div class="subheaders">
-            <span>Name1</span> | <span>Name2</span> | <span>Name3</span>
-        </div>
-        <section>
-            <h2>Descriptions (P5)</h2>
-            <p>This is where the description of meal plans or food items will go.</p>
+        <section class="hero-section">
+            <div class="subheaders">
+                <h2>Welcome to Plate Perfect</h2>
+                <p class="subtitle">Discover delicious meal plans tailored to your lifestyle</p>
+            </div>
         </section>
-        <div class="body-content">
-            <h3>Colors and Images</h3>
-            <div>
-                <ul>
-                    <li>A list of what we have</li>
-                    <li>What we are working on</li>
+
+        <section class="content-section">
+            <h2>Our Featured Meals</h2>
+            <p class="section-description">Browse our collection of nutritious and delicious meal options.</p>
+            <div class="body-content">
+                <ul class="meal-list">
+                    <li>🥗 Healthy balanced meals</li>
+                    <li>⏱️ Quick 30-minute recipes</li>
+                    <li>🎯 Customizable meal plans</li>
                 </ul>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer>
-        <div>
-            <strong>Images (if wanted or needed):</strong>
-            <!-- Add image if needed -->
-        </div>
-        <div class="links">
-            <strong>Links:</strong>
-            <!-- Add relevant links here -->
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Making meal planning simple and delicious.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Browse Meals</a></li>
+                    <li><a href="#">View Plans</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p>&copy; 2025 Plate Perfect. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
