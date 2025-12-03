@@ -8,27 +8,11 @@
     <script src="plate_perfect.js" defer></script>
 </head>
 <body>
-    <button class="sidebar_toggle" aria-label="Toggle menu">☰ Menu</button>
-    <div class="sidebar" id="sidebar">
-        <nav class="sidebar-nav">
-            <h3>Filters</h3>
-            <div class="filter-group">
-                <label class="checkbox-label">
-                    <input type="checkbox"> Price Range
-                </label>
-                <label class="checkbox-label">
-                    <input type="checkbox"> Nutritional Info
-                </label>
-                <label class="checkbox-label">
-                    <input type="checkbox"> Location
-                </label>
-            </div>
-        </nav>
-    </div>
-
+    
     <header>
         <div class="header-content">
             <div class="logo-section">
+                <button class="sidebar_toggle" aria-label="Toggle menu">☰</button>
                 <h1 class="site-title">🍽️ Plate Perfect</h1>
             </div>
             <div class="header-controls">
@@ -42,7 +26,35 @@
         </div>
     </header>
 
-    <main>
+    <div class="layout">
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <h3>Filters</h3>
+                <div class="filter-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="filter-price"> Show price-only items
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="filter-on-sale"> Show sale items only
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="filter-compare"> Enable cross-store comparison
+                    </label>
+                    <div style="margin-top:0.5rem">
+                        <label for="store-select">Stores</label>
+                        <select id="store-select" multiple style="width:100%;margin-top:0.25rem;padding:6px;border-radius:6px;border:1px solid var(--border-color);">
+                            <option selected>Walmart</option>
+                            <option selected>Target</option>
+                            <option selected>Kroger</option>
+                            <option>Costco</option>
+                        </select>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="content">
+            <main>
         <section class="hero-section">
             <div class="subheaders">
                 <h2>Welcome to Plate Perfect</h2>
@@ -51,17 +63,39 @@
         </section>
 
         <section class="content-section">
-            <h2>Our Featured Meals</h2>
-            <p class="section-description">Browse our collection of nutritious and delicious meal options.</p>
+            <h2>Price Comparison Tool</h2>
+            <p class="section-description">Compare product prices across stores in real time. We'll fetch prices from store APIs and highlight the best deal.</p>
             <div class="body-content">
-                <ul class="meal-list">
-                    <li>🥗 Healthy balanced meals</li>
-                    <li>⏱️ Quick 30-minute recipes</li>
-                    <li>🎯 Customizable meal plans</li>
-                </ul>
+                <div id="loading" aria-live="polite" style="display:none;margin-bottom:8px;">Loading prices…</div>
+                <table id="price-table" class="price-table" style="width:100%;border-collapse:collapse;">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;padding:10px;border-bottom:1px solid var(--border-color);">Product</th>
+                            <th style="text-align:right;padding:10px;border-bottom:1px solid var(--border-color);">Walmart</th>
+                            <th style="text-align:right;padding:10px;border-bottom:1px solid var(--border-color);">Target</th>
+                            <th style="text-align:right;padding:10px;border-bottom:1px solid var(--border-color);">Kroger</th>
+                            <th style="text-align:right;padding:10px;border-bottom:1px solid var(--border-color);">Lowest</th>
+                            <th style="text-align:center;padding:10px;border-bottom:1px solid var(--border-color);">Delta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- JS will populate rows here -->
+                        <tr class="placeholder-row">
+                            <td style="padding:12px;color:var(--text-secondary);">Example Product A</td>
+                            <td style="text-align:right;padding:12px;color:var(--text-secondary);">$-</td>
+                            <td style="text-align:right;padding:12px;color:var(--text-secondary);">$-</td>
+                            <td style="text-align:right;padding:12px;color:var(--text-secondary);">$-</td>
+                            <td style="text-align:right;padding:12px;color:var(--text-secondary);">$-</td>
+                            <td style="text-align:center;padding:12px;color:var(--text-secondary);">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top:1rem;color:var(--text-secondary);font-size:0.95rem">Tip: select stores in the sidebar to control which stores are included in the comparison. When you connect your APIs, this table will be populated automatically.</p>
             </div>
         </section>
-    </main>
+            </main>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-content">
