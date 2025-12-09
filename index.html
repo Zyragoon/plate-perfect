@@ -12,11 +12,14 @@
     <header>
         <div class="header-content">
             <div class="logo-section">
-                <button class="sidebar_toggle" aria-label="Toggle menu">☰</button>
+                <!-- <button class="sidebar_toggle" aria-label="Toggle menu">☰</button> -->
                 <h1 class="site-title">🍽️ Plate Perfect</h1>
             </div>
             <div class="header-controls">
-                <input class="search-bar" type="text" placeholder="Search meals, recipes...">
+                <section>
+                    <input class="search-bar" type="text" placeholder="Search meals, recipes...">
+                    <button class="searchButton"><img src="search.svg"></button>
+                </section>
                 <nav class="tabs">
                     <a href="#" class="tab-link">Home</a>
                     <a href="#" class="tab-link">Meals</a>
@@ -27,7 +30,7 @@
     </header>
 
     <div class="layout">
-        <aside class="sidebar" id="sidebar">
+        <!-- <aside class="sidebar" id="sidebar">
             <nav class="sidebar-nav">
                 <h3>Filters</h3>
                 <div class="filter-group">
@@ -51,7 +54,7 @@
                     </div>
                 </div>
             </nav>
-        </aside>
+        </aside> -->
 
         <div class="content">
             <main>
@@ -67,30 +70,30 @@
             <p class="section-description">Compare product prices across stores in real time. We'll fetch prices from store APIs and highlight the best deal.</p>
             <div class="body-content">
                 <div id="loading" aria-live="polite" style="display:none;margin-bottom:8px;">Loading prices…</div>
-                <table id="price-table" class="price-table" style="width:100%;border-collapse:collapse;">
+                <table id="price-table" class="price-table">
                     <thead>
                         <tr>
-                            <th style="text-align:left;padding:10px;border-bottom:1px solid var(--border-color);">Product</th>
-                            <th style="text-align:right;padding:10px;border-bottom:1px solid var(--border-color);">Walmart</th>
-                            <th style="text-align:right;padding:10px;border-bottom:1px solid var(--border-color);">Target</th>
-                            <th style="text-align:right;padding:10px;border-bottom:1px solid var(--border-color);">Kroger</th>
-                            <th style="text-align:right;padding:10px;border-bottom:1px solid var(--border-color);">Lowest</th>
-                            <th style="text-align:center;padding:10px;border-bottom:1px solid var(--border-color);">Delta</th>
+                            <th>Walmart</th>
+                            <th>Samsclub</th>
+                            <th>Costco</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="tableBody">
                         <!-- JS will populate rows here -->
-                        <tr class="placeholder-row">
-                            <td style="padding:12px;color:var(--text-secondary);">Example Product A</td>
+                        <tr class="price-table-row">
+                            <td>Milk $2.99</td>
+                            <td>Milk $3.99</td>
+                            <td>Milk $2.49</td>
+                            <!-- <td style="">Example Product A</td>
                             <td style="text-align:right;padding:12px;color:var(--text-secondary);">$-</td>
                             <td style="text-align:right;padding:12px;color:var(--text-secondary);">$-</td>
                             <td style="text-align:right;padding:12px;color:var(--text-secondary);">$-</td>
                             <td style="text-align:right;padding:12px;color:var(--text-secondary);">$-</td>
-                            <td style="text-align:center;padding:12px;color:var(--text-secondary);">-</td>
+                            <td style="text-align:center;padding:12px;color:var(--text-secondary);">-</td> -->
                         </tr>
                     </tbody>
                 </table>
-                <p style="margin-top:1rem;color:var(--text-secondary);font-size:0.95rem">Tip: select stores in the sidebar to control which stores are included in the comparison. When you connect your APIs, this table will be populated automatically.</p>
+                <!-- <p style="margin-top:1rem;color:var(--text-secondary);font-size:0.95rem">Tip: select stores in the sidebar to control which stores are included in the comparison. When you connect your APIs, this table will be populated automatically.</p> -->
             </div>
         </section>
             </main>
