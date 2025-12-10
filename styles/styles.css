@@ -293,6 +293,21 @@ main {
     margin: 0;
 }
 
+.searchButton {
+    width: 50px;
+    border-radius: 6px;
+}
+
+.header-controls section {
+    display: flex;
+    align-items: center;
+}
+
+.searchButton img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .content-section {
     margin-bottom: 3rem;
 }
@@ -316,6 +331,22 @@ main {
     border-radius: 8px;
     margin-bottom: 2rem;
     box-shadow: var(--shadow-sm);
+}
+
+.price-table {
+    width:100%;
+    border-collapse:collapse;
+}
+
+.price-table th {
+    text-align: center;
+    padding:10px;
+    border-bottom:1px solid var(--border-color);
+}
+
+.price-table-row {
+    padding:12px;
+    color:var(--text-secondary);
 }
 
 .meal-list {
